@@ -1,5 +1,24 @@
 from typing import List
 
+"""
+This file encapsulates an ASCII-based, case-agnostic cipher, defaulting to
+Rot13. Non-letter characters are left unchanged.
+
+Two broken methods are included that each contain an error, for demonstration
+purposes with property-based testing.
+
+For ROT13, the following encoding holds for both upper and lowercase ASCII
+letters.
+
+from: ABCDE FGHIJ KLMNO PQRST UVWXY Z
+to:   NOPQR STUVW XYZAB CDEFG HIJKL M
+
+Example ---
+
+from: The quick brown fox jumps over the lazy dog.
+to:   Gur dhvpx oebja sbk whzcf bire gur ynml qbt.
+"""
+
 ASCII_ALPHABET_SIZE = 26
 ROT13 = 13
 
@@ -10,6 +29,9 @@ LOWER_Z = 122
 
 
 def encode(_s: str, /, *, rotate_by: int = ROT13) -> str:
+    """
+    Default is ROT13 Caesar cipher.
+    """
     assert _isascii(_s)
     out: List[str] = []
     for c in _s:
@@ -21,6 +43,9 @@ def encode(_s: str, /, *, rotate_by: int = ROT13) -> str:
 
 
 def decode(_s: str, /, *, rotate_by: int = ROT13) -> str:
+    """
+    Decodes a message encoded with the same value of "rotate_by".
+    """
     assert _isascii(_s)
     out: List[str] = []
     for c in _s:
