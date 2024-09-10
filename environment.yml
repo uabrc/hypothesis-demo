@@ -1,0 +1,6 @@
+name: hypothesis
+dependencies:
+  - pip=24.2
+  - python=3.12.4
+  - pip:
+      - hypothesis==6.112.0
