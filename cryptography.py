@@ -17,6 +17,8 @@ Example ---
 
 from: The quick brown fox jumps over the lazy dog.
 to:   Gur dhvpx oebja sbk whzcf bire gur ynml qbt.
+
+The primary property of interest is whether the round-trip always equals the input.
 """
 
 ASCII_ALPHABET_SIZE = 26

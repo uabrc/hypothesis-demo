@@ -1,5 +1,19 @@
 from __future__ import annotations
 
+"""
+An implementation of a pure integer vector. Contains only the binary operations
+necessary to meet the arithmetic operation properties of a vector, i.e., vector
+addition, scalar multiplication, negation.
+
+Also has a method to rotate clockwise 90 degrees for convenience in producing
+perpendicular vectors.
+
+The dot product is also available.
+
+Properties of interest are primarily arithmetic: commutativity, associativity,
+distributivity, identity.
+"""
+
 
 class Vector2:
     def __init__(self, _x: int, _y: int, /) -> None:
@@ -36,14 +50,6 @@ class Vector2:
     @classmethod
     def zero(cls) -> Vector2:
         return cls(0, 0)
-
-    @classmethod
-    def unit_x(cls) -> Vector2:
-        return cls(1, 0)
-
-    @classmethod
-    def unit_y(cls) -> Vector2:
-        return cls(0, 1)
 
 
 def dot(lhs: Vector2, rhs: Vector2) -> int:
